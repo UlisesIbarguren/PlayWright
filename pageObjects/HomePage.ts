@@ -8,8 +8,12 @@ export class HomePage {
   readonly tShirt: Locator;
   readonly blouseLink: Locator;
   readonly printedDress : Locator;
+  readonly printedSummerDress1 : Locator;
+  readonly printedSummerDress2 : Locator;
   readonly whiteLink: Locator;
   readonly pinkLink: Locator;
+  readonly blueLink: Locator;
+  readonly blackLink: Locator;
   readonly addToCartButton: Locator;
   readonly proceedToCheckoutLink: Locator;
   readonly outOfStockMessage: Locator;
@@ -23,8 +27,12 @@ export class HomePage {
     this.tShirt = page.getByText('Faded Short Sleeve T-shirts');
     this.blouseLink = page.getByText('Blouse', { exact: true });
     this.printedDress = page.getByRole('link', { name: 'Printed Dress' }).nth(3);
+    this.printedSummerDress1 = page.getByText('Printed Summer Dress').nth(1);
+    this.printedSummerDress2 = page.getByText('Printed Summer Dress').nth(2);
     this.whiteLink = page.getByRole('link', { name: 'White' });
     this.pinkLink = page.getByRole('link', { name: 'Pink' });
+    this.blueLink = page.getByRole('link', { name: 'Blue' });
+    this.blackLink = page.getByRole('link', { name: 'Black' });
     this.addToCartButton = page.getByRole('button', { name: ' Add to cart' });
     this.proceedToCheckoutLink = page.getByRole('link', { name: 'Proceed to checkout ' });
     this.outOfStockMessage = page.getByText('This product is no longer in stock');
@@ -32,38 +40,68 @@ export class HomePage {
   }
 
   async navigateToWomen() {
+    await this.womenLink.waitFor({ state: 'visible' });
     await this.womenLink.click();
   }
 
   async navigateToDresses() {
+    await this.dresses.waitFor({ state: 'visible' });
     await this.dresses.click();
   }
 
   async navigateToTshirts() {
+    await this.tShirts.waitFor({ state: 'visible' });
     await this.tShirts.click();
   }
 
   async selectBlouse() {
+    await this.blouseLink.waitFor({ state: 'visible' });
     await this.blouseLink.click();
   }
 
   async selectTshirt() {
+    await this.tShirt.waitFor({ state: 'visible' });
     await this.tShirt.click();
   }
 
   async selectPrintedDress() {
+    await this.printedDress.waitFor({ state: 'visible' });
     await this.printedDress.click();
   }
 
+  async selectPrintedSummerDress1() {
+    await this.printedSummerDress1.waitFor({ state: 'visible' });
+    await this.printedSummerDress1.click();
+  }
+
+  async selectPrintedSummerDress2() {
+    await this.printedSummerDress2.scrollIntoViewIfNeeded()
+    await this.printedSummerDress2.waitFor({ state: 'visible' });
+    await this.printedSummerDress2.click();
+  }
+
   async selectWhite() {
+    await this.whiteLink.waitFor({ state: 'visible' }); 
     await this.whiteLink.click();
   }
 
   async selectPink() {
+    await this.pinkLink.waitFor({ state: 'visible' });
     await this.pinkLink.click();
   }
 
+  async selectBlue() {
+    await this.blueLink.waitFor({ state: 'visible' });
+    await this.blueLink.click();
+  }
+
+  async selectBlack() {
+    await this.blackLink.waitFor({ state: 'visible' });
+    await this.blackLink.click();
+  }
+
   async addToCart() {
+    await this.addToCartButton.waitFor({ state: 'visible' });
     await this.addToCartButton.click();
   }
 
