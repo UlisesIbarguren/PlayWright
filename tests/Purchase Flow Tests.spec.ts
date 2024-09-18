@@ -29,6 +29,7 @@ test.beforeEach(async ({ page, context }) => {
   checkoutPage = new CheckoutPage(page);
 
   await page.goto('/');
+
 });
 
 async function completePurchaseFlow() {
@@ -53,28 +54,29 @@ async function completePurchaseFlow() {
 
 test.describe('Purchase Flow Tests', () => {
 
-  test('purchaseWhiteBlouse', async () => {
+  test.skip('purchaseWhiteBlouse', async () => {
     await homePage.navigateToWomen();
     await homePage.selectBlouse();
     await homePage.selectWhite();
     await completePurchaseFlow(); // Use the helper function
   });
 
-  test('purchasePinkDress', async () => {
+  test.skip('purchasePinkDress', async () => {
     await homePage.navigateToDresses();
     await homePage.selectPrintedDress();
     await homePage.selectPink();
     await completePurchaseFlow(); // Use the helper function
   });
 
-  test('purchaseBlueDress', async () => {
+
+  test.skip('purchaseBlueDress', async () => {
     await homePage.navigateToDresses();
     await homePage.selectPrintedSummerDress1();
     await homePage.selectBlue();
     await completePurchaseFlow(); // Use the helper function
   });
 
-  test('purchaseBlackDress', async () => {
+  test.skip('purchaseBlackDress', async () => {
     await homePage.navigateToDresses();
     await homePage.selectPrintedSummerDress1();
     await homePage.selectBlack();

@@ -18,6 +18,7 @@ export class HomePage {
   readonly proceedToCheckoutLink: Locator;
   readonly outOfStockMessage: Locator;
   readonly blogLink: Locator;
+  readonly contactUsLink: Locator;
   
   constructor(page: Page) {
     this.page = page;
@@ -37,6 +38,8 @@ export class HomePage {
     this.proceedToCheckoutLink = page.getByRole('link', { name: 'Proceed to checkout ' });
     this.outOfStockMessage = page.getByText('This product is no longer in stock');
     this.blogLink = page.getByText('Blog');
+    this.contactUsLink = page.getByText('Contact us');
+
   }
 
   async navigateToWomen() {
@@ -129,5 +132,9 @@ export class HomePage {
   async proceedToCheckout() {
     await this.proceedToCheckoutLink.click();
     await this.proceedToCheckoutLink.click();
+  }
+
+  async navigateToContactUs() {
+    await this.contactUsLink.click();
   }
 }
