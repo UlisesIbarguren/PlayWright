@@ -19,10 +19,14 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Clear npm cache
+        run: npm cache clean --force
+
       - name: Install dependencies
         run: npm install
 
-      # Remove the build step since it's not needed
+      - name: List project files
+        run: ls -al # Verify that the correct package.json is there
 
       - name: Run tests
         run: npm test
