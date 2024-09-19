@@ -7,9 +7,9 @@ export class HomePage {
   readonly tShirts: Locator;
   readonly tShirt: Locator;
   readonly blouseLink: Locator;
-  readonly printedDress : Locator;
-  readonly printedSummerDress1 : Locator;
-  readonly printedSummerDress2 : Locator;
+  readonly printedDress: Locator;
+  readonly printedSummerDress1: Locator;
+  readonly printedSummerDress2: Locator;
   readonly whiteLink: Locator;
   readonly pinkLink: Locator;
   readonly blueLink: Locator;
@@ -19,7 +19,7 @@ export class HomePage {
   readonly outOfStockMessage: Locator;
   readonly blogLink: Locator;
   readonly contactUsLink: Locator;
-  
+
   constructor(page: Page) {
     this.page = page;
     this.womenLink = page.locator('#block_top_menu').getByRole('link', { name: 'Women' });
@@ -39,7 +39,10 @@ export class HomePage {
     this.outOfStockMessage = page.getByText('This product is no longer in stock');
     this.blogLink = page.getByText('Blog');
     this.contactUsLink = page.getByText('Contact us');
+  }
 
+  async cleanup() {
+    // Reset or clear any state if needed
   }
 
   async navigateToWomen() {
@@ -74,16 +77,18 @@ export class HomePage {
 
   async selectPrintedSummerDress1() {
     await this.printedSummerDress1.waitFor({ state: 'visible' });
+    await this.printedSummerDress1.scrollIntoViewIfNeeded();
     await this.printedSummerDress1.click();
   }
 
   async selectPrintedSummerDress2() {
     await this.printedSummerDress2.waitFor({ state: 'visible' });
+    await this.printedSummerDress2.scrollIntoViewIfNeeded();
     await this.printedSummerDress2.click();
   }
 
   async selectWhite() {
-    await this.whiteLink.waitFor({ state: 'visible' }); 
+    await this.whiteLink.waitFor({ state: 'visible' });
     await this.whiteLink.click();
   }
 
@@ -112,19 +117,13 @@ export class HomePage {
   }
 
   async navigateToBlog(context: any) {
-    // Listen for the new tab (new page)
     const [newPage] = await Promise.all([
-      context.waitForEvent('page'), // Wait for the new tab to open
-      this.blogLink.click() // Click the blog link
+      context.waitForEvent('page'),
+      this.blogLink.click(),
     ]);
 
-    // Wait for the new page to load
     await newPage.waitForLoadState();
-
-    // Assert that the new page has the expected URL
     expect(newPage.url()).toBe('https://prestashop.com/blog/');
-
-    // Assert that the new page contains expected content
     await expect(newPage).toHaveTitle('Ecommerce advice and success stories – Blog | PrestaShop');
   }
 
