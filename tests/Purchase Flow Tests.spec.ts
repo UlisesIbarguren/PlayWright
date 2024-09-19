@@ -10,6 +10,7 @@ function generateUniqueEmail(baseEmail: string): string {
   return `${user}+${timestamp}@${domain}`;
 }
 
+let browser;
 let homePage: HomePage;
 let accountPage: AccountCreationPage;
 let addressPage: AddressPage;
@@ -100,4 +101,7 @@ test.describe('Purchase Flow Tests', () => {
     await homePage.navigateToBlog(context);
   });  
   
+  test.afterEach(async ({ context }) => {
+    await context.clearCookies(); 
+  });
 });

@@ -78,7 +78,6 @@ export class HomePage {
   }
 
   async selectPrintedSummerDress2() {
-    await this.printedSummerDress2.scrollIntoViewIfNeeded()
     await this.printedSummerDress2.waitFor({ state: 'visible' });
     await this.printedSummerDress2.click();
   }
