@@ -1,4 +1,35 @@
 {
-  "cookies": [],
+  "cookies": [
+    {
+      "name": "PrestaShop-2ae4d32f6206717abc31030c0cc08275",
+      "value": "fMQcpHD0y6I%3D21%2Fcyg3JuX8%3DWZrJoqV4YGM%3DT1si2e8i%2FCE%3DV2yp%2BLfvm1E%3D4%2FYAspTMqAk%3DRMT6wdoS4uk%3D2i7n2hAoRy0%3DTNcfaZMbRLE%3D96n6Lx4wLgs%3DfKGDfwTwp0s%3DX933vO0U6is%3DwSrx9Jx0rJs%3DQeVeu%2F%2BSljw%3DzH2Bm%2BbKNZo%3D000116",
+      "domain": ".www.automationpractice.pl",
+      "path": "/",
+      "expires": 1729004864.088737,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "h7I_tcpNrxlGQCyBa7aRoQvSWXti4la8S9LQleyHqC0-1727276868-1.0.1.1-08xvL4NfcKOY2MBpclw_2MU1_MNldv5l_wd5dN4vlmMNAI.XdorGc28_KrXDqSQMacwKElMuob.phjGyjWOSnw",
+      "domain": ".prestashop.com",
+      "path": "/",
+      "expires": 1727278668.776844,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "2_KJc7mPVFRBc190El4sdXXUkExrmISx2LkKYaV3xno-1727276869-1.0.1.1-OerfuNgWUqWxMT.NsgS0j_9rJbrtEg5tEJhdnSqKkHmbHT.JwHegSb.QUICyvx5V860LZxc9FRS.xH3WPJWh6Q",
+      "domain": ".hsforms.net",
+      "path": "/",
+      "expires": 1727278669.238634,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
   "origins": []
 }
