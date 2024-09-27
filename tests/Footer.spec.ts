@@ -102,4 +102,22 @@ test.describe('Footer Section Tests', () => {
         const storeTitle = await footerPage.storeTitle.textContent();
         expect(storeTitle).toBe('Stores - My Shop');
     });
+
+    // Navigate to Facebook page
+    test('Navigate to Facebook page', async ({ page }) => {
+        await footerPage.facebookLink.click();
+        await expect(page).toHaveTitle('My Shop');
+    });
+
+    // Navigate to X page
+    test('Navigate to X page', async ({ page }) => {
+        await footerPage.xLink.click();    
+        await expect(page).toHaveTitle('My Shop');
+    });
+    
+    // Navigate to Prestashop page
+    test('Navigate to Prestashop page', async ({ page }) => {
+        await footerPage.prestaShopLink.click();
+        await expect(page).toHaveTitle('My Shop');
+    });
 });

@@ -21,6 +21,9 @@ export class FooterPage {
   readonly emailText: Locator;
   readonly womenTitle: Locator;
   readonly storeTitle: Locator;
+  readonly facebookLink: Locator;
+  readonly xLink: Locator;
+  readonly prestaShopLink: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -43,7 +46,9 @@ export class FooterPage {
     this.emailText = this.page.getByText('Email: sales@yourcompany.com');
     this.womenTitle = this.page.locator('title');
     this.storeTitle = this.page.locator('title');
-    
+    this.facebookLink = this.page.locator('.facebook');
+    this.xLink = this.page.locator('.twitter')
+    this.prestaShopLink = this.page.locator('.rss')
   }
 
   // Method to verify headings and texts
