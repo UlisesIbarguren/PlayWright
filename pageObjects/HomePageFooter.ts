@@ -19,6 +19,8 @@ export class FooterPage {
   readonly addressText: Locator;
   readonly callUsNowText: Locator;
   readonly emailText: Locator;
+  readonly womenTitle: Locator;
+  readonly storeTitle: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -39,6 +41,9 @@ export class FooterPage {
     this.addressText = this.page.getByText('My Company, 42 avenue des Champs Elysées 75000 Paris France');
     this.callUsNowText = this.page.locator('#block_contact_infos').getByText('Call us now');
     this.emailText = this.page.getByText('Email: sales@yourcompany.com');
+    this.womenTitle = this.page.locator('title');
+    this.storeTitle = this.page.locator('title');
+    
   }
 
   // Method to verify headings and texts

@@ -88,4 +88,18 @@ test.describe('Footer Section Tests', () => {
     test('Verify Email text', async () => {
         await footerPage.verifyContainsText(footerPage.emailText, 'Email');
     });
+
+     // Navigate to Women
+     test('Navigate to Women', async () => {
+        await footerPage.womenHeading.click();
+        const womenTitle = await footerPage.womenTitle.textContent();
+        expect(womenTitle).toBe('Women - My Shop');
+    });
+
+    // Navigate to Our stores
+    test('Navigate to Our stores', async () => {
+        await footerPage.storesTitle.click();
+        const storeTitle = await footerPage.storeTitle.textContent();
+        expect(storeTitle).toBe('Stores - My Shop');
+    });
 });
